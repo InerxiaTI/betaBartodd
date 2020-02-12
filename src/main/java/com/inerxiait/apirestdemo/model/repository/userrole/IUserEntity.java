@@ -1,4 +1,4 @@
-package com.inerxiait.apirestdemo.model.repository;
+package com.inerxiait.apirestdemo.model.repository.userrole;
 
 import com.inerxiait.apirestdemo.model.entity.userole.UserEntity;
 import org.springframework.data.repository.CrudRepository;

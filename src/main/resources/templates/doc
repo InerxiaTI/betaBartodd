@@ -1,0 +1,47 @@
+# Documentación API
+
+## URLs del API
+1. Raiz `BASE_URL/` o `BASE_URL/home` o `BASE_URL/inicio`
+   * **Nota:** No asociada a ningún método de acceso. 
+### Endpoints o URLs de acceso
+1. Login `BASE_URL/api/login` 
+  #### **Descripción:** 
+   Retorna información básica del usuario. Si y sólo si los parámetros cumplen las condiciones, se retorna información como la siguiente:
+
+```json
+{
+  "mensaje": "Hola admin, has iniciado sesi�n con �xito!",
+  "user": {
+      "password": null,
+      "username": "admin",
+      "authorities": [
+          {
+          "authority": "ROLE_ADMIN"
+        },
+          {
+          "authority": "ROLE_USER"
+        }
+      ],
+      "accountNonExpired": true,
+      "accountNonLocked": true,
+      "credentialsNonExpired": true,
+      "enabled": true
+  },
+  "token": "C4d3n4Alf4num3r1c43xt3n54"
+}
+``` 
+  #### **Método:** `POST`
+  #### **Parametros:**
+   * `username`: usuario de la persona que desea acceder.
+   * `password`: contraseña de la persona que desea acceder. 
+  #### **Casos de respuesta no exitosas:**
+   * Uno o más campos vacíos o incorrectos:
+```json
+{
+  "mensaje": "Error de autenticaci�n: username o password incorrecto!",
+  "error": "Bad credentials"
+}
+``` 
+ 
+
+  

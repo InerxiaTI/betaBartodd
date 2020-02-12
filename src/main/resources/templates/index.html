@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .estiloMd{
+            color: #082bdc;
+            background-color: #f1f1f1;
+        }
+        .estiloMd2{
+            color: #dc3e1d;
+            background-color: #f1f1f1;
+            font-weight: bold;
+        }
+    </style>
+    <title>Title</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 id="documentacinapi">Documentación API</h1>
+
+            <h2 id="urlsdelapi">URLs del API</h2>
+
+            <ol>
+                <li>Raiz <span class="estiloMd2" th:text="${url}"></span> o <code class="estiloMd2"><span class="estiloMd2" th:text="${url}"></span>home</code> o <code class="estiloMd2"><span class="estiloMd2" th:text="${url}"></span>inicio</code>
+
+
+                    <ul>
+                        <li><strong>Nota:</strong> No asociada a ningún método de acceso.
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3 id="endpointsourlsdeacceso">Endpoints o URLs de acceso</h3>
+        </div>
+        <div class="col-md-8">
+            <ol>
+                <li>Login <code class="estiloMd2"><span class="estiloMd2" th:text="${url}"></span>api/login</code>
+                    <h4><strong>Descripción:</strong></h4>
+                    <p>
+                        Retorna información básica del usuario. Si y sólo si los parámetros cumplen las condiciones,
+                        se retorna información como la siguiente:
+                    </p>
+                    <pre><code class="json language-json estiloMd">
+                        {
+                          "mensaje": "Hola admin, has iniciado sesion con exito!",
+                          "user": {
+                              "password": null,
+                              "username": "admin",
+                              "authorities": [
+                                  {
+                                  "authority": "ROLE_ADMIN"
+                                },
+                                  {
+                                  "authority": "ROLE_USER"
+                                }
+                              ],
+                              "accountNonExpired": true,
+                              "accountNonLocked": true,
+                              "credentialsNonExpired": true,
+                              "enabled": true
+                          },
+                          "token": "C4d3n4Alf4num3r1c43xt3n54"
+                        }
+                    </code></pre>
+
+                    <h4><strong>Método:</strong> <code class="estiloMd2">POST</code></h4>
+
+                    <h4><strong>Parametros:</strong></h4>
+
+                    <ul>
+                        <li><code class="estiloMd">username</code>: usuario de la persona que desea acceder.</li>
+                        <li><code class="estiloMd">password</code>: contraseña de la persona que desea acceder.</li>
+                    </ul>
+
+                    <h4><strong>Casos de respuesta no exitosas:</strong></h4>
+                    <ul>
+                        <li> <h5>Uno o más campos vacíos o incorrectos:</h5></li>
+                    </ul>
+
+                     <pre><code class="json language-json estiloMd">
+                    {
+                      "mensaje": "Error de autenticacion: username o password incorrecto!",
+                      "error": "Bad credentials"
+                    }
+                    </code></pre>
+                </li>
+                <li>Lista Clientes <code class="estiloMd2"><span class="estiloMd2" th:text="${url}"></span>api/v1/clients</code>
+                    <h4><strong>Descripción:</strong></h4>
+                    <p>
+                        Retorna información básica de los clientes dentro del sistema. Si y sólo si los parámetros cumplen las condiciones,
+                        se retorna información como la siguiente:
+                    </p>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+</html>
