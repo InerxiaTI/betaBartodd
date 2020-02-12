@@ -2,7 +2,7 @@ package com.inerxiait.apirestdemo.service.userole;
 
 import com.inerxiait.apirestdemo.model.entity.userole.Role;
 import com.inerxiait.apirestdemo.model.entity.userole.UserEntity;
-import com.inerxiait.apirestdemo.model.repository.IUserEntity;
+import com.inerxiait.apirestdemo.model.repository.userrole.IUserEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
